@@ -73,9 +73,11 @@
 			<artifactId>jstl</artifactId>
 		</dependency>
 		
-		
-
-		
+		<!-- thymeleaf 라이브러리 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>		
 		
 	</dependencies>
 
