@@ -27,7 +27,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>	<!-- spring-boot-starter-web : tomcat은 포함되어있지만, JSP 엔진은 미포함 (jsp 사용을 위해서는 추가 설정 필요) -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -39,6 +39,8 @@
 <!-- 			<version>2.1.4</version> -->
 <!-- 		</dependency> -->
 
+		<!-- 스프링 부트는 스프링 프로젝트와 다르게, 동적 파일들의 파일 변경을 자동으로 반영하지 않는다 
+			 기존 스프링과 동일하게 자동 반영하기 위해선 다음과 같은 설정을 추가하여 주면 된다.	-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -55,6 +57,26 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- 스프링부트에서 JSP 파일 구동 설정  
+				1. jasper, jstl을 의존성에 추가 
+				2. apllication.properties에 jsp 페이지 처리를 위한 prefix/suffix 추가	-->
+		<!-- jasper 라이브러리 -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jstl 라이브러리 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		
+		
+
+		
+		
 	</dependencies>
 
 	<!-- 빌드에 사용할 플러그인 목록 -->
