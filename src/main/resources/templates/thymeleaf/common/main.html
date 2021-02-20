@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="thymeleaf/layout/default">
+
+<style layout:fragment="style">
+/* CSS Start !! */
+
+</style>
+
+<!-- Begin Page Content -->
+<div layout:fragment="content" class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Main</h1>
+        <a th:href="@{/404}" class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm">
+            <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
+        </a>
+    </div>
+
+</div>
+<!-- /.container-fluid -->
+
+<script layout:fragment="script">
+// JS Start !!
+
+// $(()=>{
+
+//     var dataRange = 'ReadRange';
+
+//     // typeof : 해당 변수의 타입이 String 경우 배열로 변환
+//     if(typeof(dataRange) === "string"){
+//         var temp = dataRange;
+//         dataRange = new Array();
+//         dataRange.push([temp]);
+//     }
+
+//     console.log(dataRange);
+
+// });
+
+</script>
+
+</html>
