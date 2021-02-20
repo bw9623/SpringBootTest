@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CommonController {
 	
 	// 메인 페이지
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String mainView() throws Exception {
-		return "thymeleaf/common/main";
-	}
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+//	public String mainView() throws Exception {
+//		return "thymeleaf/common/main";
+//	}
 }
