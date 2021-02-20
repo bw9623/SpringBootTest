@@ -23,7 +23,7 @@ public class TestController {
 	@RequestMapping(value = "/home")
 	public String home() {
 		
-		return "index.html";
+		return "redirect:index.html";
 	}
 	
 	@ResponseBody	// view가 아닌 data를 반환해야 하는 경우 사용
@@ -66,7 +66,6 @@ public class TestController {
 		ModelAndView mav = new ModelAndView("test");
 		
 		List<TestVo> testList = testService.selectTest();
-		System.out.println("리스트 : ----------------------" + testList);
 		mav.addObject("list", testList);
 		
 		return mav;
