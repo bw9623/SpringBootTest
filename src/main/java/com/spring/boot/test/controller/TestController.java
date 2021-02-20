@@ -3,16 +3,22 @@ package com.spring.boot.test.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.spring.boot.test.model.vo.TestVo;
+import com.spring.boot.test.service.TestService;
+import com.spring.boot.test.vo.TestVo;
 
 @Controller
 public class TestController {
+	
+	@Autowired 
+	TestService testService;
+	
 	
 	@RequestMapping(value = "/home")
 	public String home() {
@@ -46,12 +52,25 @@ public class TestController {
 	}
 	
 	// thymeleaf
-	@RequestMapping(value = "/thymeleafTest")
-	public String thymeleafTest(Model model) {
-		TestVo testModel = new TestVo("mean", "민병욱");
-		model.addAttribute("testModel", testModel);
+//	@RequestMapping(value = "/thymeleafTest")
+//	public String thymeleafTest(Model model) {
+//		TestVo testModel = new TestVo("mean", "민병욱");
+//		model.addAttribute("testModel", testModel);
+//		
+//		return "thymeleaf/thymeleafTest";
+//	}
+	
+	
+	@RequestMapping(value = "/dbtest")
+	public ModelAndView dbtest() throws Exception{
+		ModelAndView mav = new ModelAndView("test");
 		
-		return "thymeleaf/thymeleafTest";
+		List<TestVo> testList = testService.selectTest();
+		System.out.println("리스트 : ----------------------" + testList);
+		mav.addObject("list", testList);
+		
+		return mav;
 	}
+	
 	
 }
