@@ -22,8 +22,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			.csrf().disable()
 			.authorizeRequests()
-				.antMatchers("/", "/account/register" ,"/css/**").permitAll()		// permitAll() 로그인 안해도 접근 가능하게 함
+				.antMatchers("/", "/account/register" ,"/css/**", "/api/**").permitAll()		// permitAll() 로그인 안해도 접근 가능하게 함
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
